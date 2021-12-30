@@ -35,7 +35,7 @@ class App extends Component {
   };
 
   calculate = (symbol) => {
-    let { current, previous, nextIsReset } = this.state;
+    let { current, previous } = this.state;
 
     if (previous.length > 0) {
       current = eval(String(previous[previous.length - 1] + current));
@@ -143,6 +143,7 @@ class App extends Component {
           className="result"
           type="text"
           value={this.state.current}
+          readOnly
         ></input>
 
         {buttons.map((button, index) => {
